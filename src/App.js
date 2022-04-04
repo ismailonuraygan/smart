@@ -14,11 +14,11 @@ function App() {
         setData((res.data.body.intraDayTradeHistoryList.filter(e => e.conract.substring(0, 2) === "PH"))) /* Burada gelen datalar içinden sadece conract değeri PH ile başlayanları alıyoruz. */ /* Burada gelen datalar içinden sadece conract değeri PH ile başlayanları alıyoruz. */
       }
       fetchData();
-      console.log(data)
     }, [])
-  return (
+    console.log(data)
+    return (
     <div className="App">
-      <Table data={data} />
+      {data && <Table data={data}  />}
     </div>
   );
 }
